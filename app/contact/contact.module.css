@@ -1,0 +1,139 @@
+.page {
+  padding-top: 80px;
+}
+
+.header {
+  background: linear-gradient(rgba(11, 26, 46, 0.8), rgba(11, 26, 46, 0.8)), url("https://images.unsplash.com/photo-1423666639041-f56000c27a9a") center/cover no-repeat;
+  color: white;
+  padding: 10rem 0 12rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: 'CONNECT';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.02);
+  letter-spacing: 0.1em;
+  pointer-events: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 6rem;
+  margin-top: -6rem;
+  position: relative;
+  z-index: 2;
+}
+
+.info h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: var(--zoilos-navy);
+  font-family: var(--font-display);
+}
+
+.info p {
+  font-size: 1.1rem;
+  color: #4a5a6a;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+.contactMethods {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.method h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--zoilos-gold);
+  margin-bottom: 0.75rem;
+}
+
+.method p {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--zoilos-navy);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.formWrap {
+  background: white;
+  padding: 4rem;
+  border-radius: var(--radius-2xl);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+.formGroup {
+  margin-bottom: 2rem;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  margin-bottom: 0.75rem;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+  padding: 1.25rem;
+  background: #f8fafc;
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--zoilos-gold);
+  background: white;
+  box-shadow: 0 10px 20px rgba(200, 169, 110, 0.1);
+}
+
+.successState {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.successState h3 {
+  font-size: 2rem;
+  font-family: var(--font-display);
+  color: var(--zoilos-navy);
+  margin-bottom: 1rem;
+}
+
+.successState h3::before {
+  content: 'SUCCESS';
+  display: block;
+  font-size: 0.7rem;
+  color: #22c55e;
+  letter-spacing: 0.3em;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: 1fr; margin-top: -4rem; }
+  .formWrap { padding: 3rem 2rem; }
+}

@@ -1,0 +1,179 @@
+.page {
+  padding-top: 80px;
+}
+
+.hero {
+  background: linear-gradient(rgba(11, 26, 46, 0.85), rgba(11, 26, 46, 0.85)), url("https://images.unsplash.com/photo-1501523460185-2aa5d2a0f981") center/cover no-repeat;
+  color: white;
+  padding: 10rem 0 12rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: var(--watermark, 'TRADE');
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.02);
+  letter-spacing: 0.1em;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 50% 50%, rgba(184, 177, 161, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.heroContent h1 {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  margin-bottom: 1.5rem;
+  font-family: var(--font-display);
+  line-height: 1.1;
+}
+
+.heroContent p {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+.heroActions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+/* ── Stats Bar ── */
+.statsBar {
+  background: var(--global-secondary);
+  color: white;
+  padding: 4rem 0;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.statVal {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--global-accent);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.textBlock {
+  padding: 4rem;
+  background: var(--global-light);
+  border-radius: var(--radius-2xl);
+  border-left: 4px solid var(--global-accent);
+}
+
+.serviceLinks {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.serviceLink {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--global-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s;
+}
+
+.serviceLink:hover {
+  gap: 1rem;
+  color: var(--global-accent);
+}
+
+.checkList {
+  margin-top: 2rem;
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.checkList li {
+  font-size: 0.95rem;
+  color: #4a5a6a;
+  padding-left: 1.5rem;
+  position: relative;
+  border-left: 2px solid rgba(184, 177, 161, 0.3);
+}
+
+.altBg {
+  background: var(--zoilos-ivory);
+}
+
+.ctaBox {
+  background: var(--global-primary);
+  color: white;
+  padding: 6rem 4rem;
+  border-radius: var(--radius-2xl);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaBox h2 { font-size: 2.5rem; margin-bottom: 1.5rem; font-family: var(--font-display); }
+.ctaBox p { font-size: 1.1rem; color: rgba(255, 255, 255, 0.7); max-width: 600px; margin: 0 auto; }
+
+@media (max-width: 1024px) {
+  .twoCol { grid-template-columns: 1fr; gap: 4rem; }
+  .statsGrid { grid-template-columns: repeat(2, 1fr); gap: 3rem; }
+  .heroContent { text-align: center; }
+  .heroActions { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+  .heroActions { flex-direction: column; }
+  .checkList { grid-template-columns: 1fr; }
+}

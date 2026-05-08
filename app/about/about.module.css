@@ -1,0 +1,401 @@
+.page {
+  padding-top: 80px;
+  background-color: var(--zoilos-white);
+  background-image: 
+    linear-gradient(rgba(11, 26, 46, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 26, 46, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.header {
+  background: linear-gradient(rgba(11, 26, 46, 0.8), rgba(11, 26, 46, 0.8)), url("https://images.unsplash.com/photo-1522071820081-009f0129c71c") center/cover no-repeat;
+  color: white;
+  padding: 10rem 0 12rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: 'LEGACY';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.02);
+  letter-spacing: 0.1em;
+  pointer-events: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 6rem;
+  align-items: center;
+  margin-top: -6rem;
+  position: relative;
+  z-index: 2;
+}
+
+.placeholder-img {
+  width: 100%;
+  background: white;
+  border-radius: var(--radius-2xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 30px 60px -15px rgba(11, 26, 46, 0.1), inset 0 0 0 1px rgba(11, 26, 46, 0.03);
+}
+
+.content h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 2rem;
+  color: var(--zoilos-navy);
+  line-height: 1.1;
+  font-family: var(--font-display);
+}
+
+.content p {
+  color: #4a5a6a;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.pillar {
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--zoilos-gold);
+}
+
+.pillar h3 {
+  font-size: 1.1rem;
+  color: var(--zoilos-navy);
+  margin-bottom: 0.75rem;
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+}
+
+.pillar p {
+  color: #4a5a6a;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.summaryActions {
+  margin-top: 3rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.valuesSection {
+  background: #f8fafc;
+  padding: 10rem 0;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+}
+
+.valueCard {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  padding: 5rem 2.5rem 4rem;
+  border-radius: var(--radius-2xl);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.04), inset 0 2px 0 rgba(255,255,255,1);
+  text-align: left;
+  border: 1px solid rgba(0,0,0,0.02);
+  transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.valueCard:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
+  border-color: var(--zoilos-gold);
+}
+
+.valueNumber {
+  position: absolute;
+  top: 2rem;
+  left: 2.5rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--zoilos-gold);
+  letter-spacing: 0.1em;
+}
+
+.valueNumber::after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--zoilos-gold);
+  margin-top: 0.5rem;
+}
+
+.valueCard h3 {
+  color: var(--zoilos-navy);
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  font-family: var(--font-display);
+}
+
+/* ── Leadership ── */
+.leadershipGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.leaderCard {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 40px;
+}
+
+.leaderCard:hover .leaderImg {
+  transform: scale(1.05) translateY(-10px);
+}
+
+.leaderImg {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  border: 4px solid var(--zoilos-white);
+  margin-bottom: -60px; /* Overlap with the card below */
+  z-index: 2;
+  position: relative;
+  transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.leaderInfo {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  padding: 5rem 2rem 2.5rem; /* Extra top padding for the overlapping image */
+  border-radius: var(--radius-2xl);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.05), inset 0 2px 0 rgba(255,255,255,1);
+  border: 1px solid rgba(0,0,0,0.03);
+  width: 100%;
+  transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.leaderCard:hover .leaderInfo {
+  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+  border-color: rgba(200,169,110,0.3);
+}
+
+.leaderInfo h3 {
+  font-size: 1.4rem;
+  color: var(--zoilos-navy);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-display);
+}
+
+.leaderRole {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--zoilos-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+}
+
+.leaderBio {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.leaderLink {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--zoilos-navy);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.leaderCard:hover .leaderLink {
+  color: var(--zoilos-gold);
+}
+
+/* ── Process ── */
+.processSection {
+  background: var(--zoilos-navy);
+  padding: 10rem 0;
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  margin-top: 5rem;
+}
+
+.processCard {
+  position: relative;
+}
+
+.processNum {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.05);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.processTitle {
+  color: white;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-display);
+}
+
+.processDesc {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
+}
+
+/* ── CTA ── */
+.cta {
+  background: var(--zoilos-navy);
+  color: white;
+  padding: 10rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(circle at 10% 10%, rgba(200,169,110,0.05) 0%, transparent 40%);
+}
+
+.cta h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1.5rem;
+  font-family: var(--font-display);
+  position: relative;
+  z-index: 2;
+}
+
+.cta p {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.ctaActions {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Force correct hover on outline buttons inside the dark CTA section */
+.cta .ctaActions a.btn-outline,
+.cta .ctaActions a {
+  color: white;
+  border-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+.cta .ctaActions a.btn-outline:hover {
+  background: var(--zoilos-gold);
+  border-color: var(--zoilos-gold);
+  color: var(--zoilos-navy);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(200,169,110,0.35);
+}
+.cta .ctaActions a.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 48px rgba(200,169,110,0.5);
+}
+
+/* Outline button fix on light background (summaryActions) */
+.summaryActions a.btn-outline {
+  color: var(--zoilos-navy);
+  border-color: var(--zoilos-navy);
+}
+.summaryActions a.btn-outline:hover {
+  background: var(--zoilos-gold);
+  border-color: var(--zoilos-gold);
+  color: var(--zoilos-navy);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .grid { 
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: -4rem; 
+    gap: 4rem; 
+  }
+  .valuesGrid, .leadershipGrid, .processGrid { grid-template-columns: repeat(2, 1fr); }
+  .header { padding: 8rem 0 10rem; }
+  .header::before { font-size: 10rem; }
+}
+
+@media (max-width: 768px) {
+  .header { padding: 6rem 0 8rem; }
+  .header::before { font-size: 5rem; }
+  
+  .valuesSection, .processSection, .cta { padding: 5rem 0; }
+  
+  .valueCard { padding: 3rem 2rem 2.5rem; }
+  
+  .processGrid { margin-top: 3rem; gap: 2rem; }
+  
+  .content h2, .cta h2 { font-size: clamp(1.8rem, 6vw, 2.5rem); }
+}
+
+@media (max-width: 640px) {
+  .valuesGrid, .leadershipGrid, .processGrid { grid-template-columns: 1fr; }
+
+  .summaryActions, .ctaActions {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  
+  .summaryActions a, .ctaActions a {
+    justify-content: center;
+    width: 100%;
+  }
+}

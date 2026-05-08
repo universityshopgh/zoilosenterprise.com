@@ -1,0 +1,251 @@
+.page {
+  padding-top: 80px;
+}
+
+.header {
+  background: linear-gradient(rgba(11, 26, 46, 0.8), rgba(11, 26, 46, 0.8)), url("https://images.unsplash.com/photo-1497366811353-6870744d04b2") center/cover no-repeat;
+  color: white;
+  padding: 8rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: 'GALLERY';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 15rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.02);
+  letter-spacing: 0.1em;
+  pointer-events: none;
+}
+
+.header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.header p {
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.filterWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.gallerySection {
+  position: relative;
+  background-color: #f8fafc;
+  background-image: 
+    linear-gradient(rgba(11, 26, 46, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 26, 46, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  padding: 6rem 0;
+}
+
+/* Subtle glow behind the container */
+.gallerySection::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(212, 168, 67, 0.05) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.galleryContainer {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border-radius: 32px;
+  padding: 5rem 4rem;
+  box-shadow: 
+    0 40px 100px -20px rgba(11, 26, 46, 0.08), 
+    0 0 0 1px rgba(11, 26, 46, 0.04),
+    inset 0 2px 0 rgba(255, 255, 255, 1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Top accent line */
+.galleryContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--zoilos-gold), transparent);
+  opacity: 0.5;
+}
+
+.filterBar {
+  display: flex;
+  background: white;
+  padding: 0.5rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.04);
+  gap: 0.25rem;
+}
+
+.filterBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius-full);
+  border: none;
+  background: transparent;
+  color: var(--zoilos-navy);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.4s var(--ease-soft);
+}
+
+.filterBtn:hover {
+  background: rgba(0,0,0,0.02);
+  color: var(--zoilos-gold);
+}
+
+.filterBtn.active {
+  background: var(--zoilos-navy);
+  color: white;
+  box-shadow: 0 10px 20px rgba(11, 26, 46, 0.2);
+}
+
+.count {
+  font-size: 0.65rem;
+  background: rgba(0,0,0,0.05);
+  color: #64748b;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: 800;
+  transition: all 0.4s;
+}
+
+.filterBtn.active .count {
+  background: var(--zoilos-gold);
+  color: var(--zoilos-navy);
+}
+
+/* ── Mosaic Grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+  grid-auto-flow: dense;
+}
+
+.card {
+  position: relative;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  cursor: pointer;
+  background: #f1f5f9;
+  transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.01);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.15);
+  border-color: var(--zoilos-gold);
+}
+
+/* Mosaic variations */
+.card_large   { grid-column: span 6; grid-row: span 2; }
+.card_tall    { grid-column: span 3; grid-row: span 2; }
+.card_wide    { grid-column: span 6; grid-row: span 1; }
+.card_normal  { grid-column: span 3; grid-row: span 1; }
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(11, 26, 46, 0.9) 0%, transparent 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card:hover .overlay { opacity: 1; }
+
+.category {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--zoilos-gold);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.card h3 {
+  color: white;
+  font-size: 1.25rem;
+  margin: 0;
+  transform: translateY(10px);
+  transition: transform 0.4s ease;
+}
+
+.card:hover h3 { transform: translateY(0); }
+
+.bgTitle {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: white;
+  opacity: 0.15;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  padding: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .card_large, .card_wide { grid-column: span 12; }
+  .card_tall, .card_normal { grid-column: span 6; }
+  .galleryContainer { padding: 4rem 2rem; }
+}
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; display: flex; flex-direction: column; }
+  .card { grid-column: span 1 !important; height: 300px !important; }
+  .header h1 {
+    font-size: 2.5rem;
+  }
+  .galleryContainer { padding: 3rem 1.5rem; border-radius: 24px; }
+  .filterBar { flex-wrap: wrap; justify-content: center; border-radius: 20px; padding: 1rem; }
+  .filterBtn { width: calc(50% - 0.5rem); justify-content: center; }
+}
