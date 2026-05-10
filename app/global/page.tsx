@@ -47,6 +47,7 @@ export default function GlobalPage() {
         <div className="container">
           <div className={styles.twoCol}>
             <div className="reveal">
+              <span className="section-label" style={{ color: 'var(--global-accent)' }}>Logistics Excellence</span>
               <h2>Import Services</h2>
               <p>We source high-quality materials and goods from trusted international partners, handling all compliance, regulatory frameworks, and customs documentation with absolute precision.</p>
               <div className={styles.serviceLinks}>
@@ -63,34 +64,51 @@ export default function GlobalPage() {
               </div>
             </div>
             <div className="reveal stagger-1">
-              <div className={styles.textBlock}>
-                <h3 style={{ fontSize: '2rem', marginBottom: '1.5rem', fontFamily: 'var(--font-display)', color: 'var(--global-primary)' }}>Regulatory Compliance</h3>
-                <p style={{ color: '#4a5a6a', lineHeight: '1.8' }}>Navigating international trade laws requires deep expertise. Zoilos Global ensures 100% adherence to all cross-border regulations, minimizing delays and maximizing throughput.</p>
+              <div style={{ height: '450px', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
+                <img src="/import1.jpg" alt="Import Services" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className={`section ${styles.altBg}`}>
+      <section className={`section ${styles.altBg}`} style={{ background: '#f0f4f8' }}>
         <div className="container">
           <div className={styles.twoCol}>
             <div className="reveal">
-              <div className={styles.textBlock} style={{ background: 'white' }}>
-                <h3 style={{ fontSize: '2rem', marginBottom: '1.5rem', fontFamily: 'var(--font-display)', color: 'var(--global-primary)' }}>Global Distribution Network</h3>
-                <p style={{ color: '#4a5a6a', lineHeight: '1.8' }}>Leverage our established network of distribution hubs across 3 continents to penetrate new markets rapidly and efficiently.</p>
+              <div style={{ height: '450px', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
+                <img src="/import2.jpg" alt="Export Solutions" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
             </div>
             <div className="reveal stagger-1">
+              <span className="section-label" style={{ color: 'var(--global-accent)' }}>Global Expansion</span>
               <h2>Export Solutions</h2>
               <p>Expand your reach. We help local businesses scale into international markets with efficient export strategies and robust logistical support.</p>
-              <ul className={styles.checkList}>
-                <li>Market Entry Strategy</li>
-                <li>Export Documentation</li>
-                <li>International Logistics</li>
-                <li>Trade Finance Support</li>
+              <ul className={styles.checkList} style={{ listStyle: 'none', padding: 0, marginTop: '1.5rem' }}>
+                {['Market Entry Strategy', 'Export Documentation', 'International Logistics', 'Trade Finance Support'].map(item => (
+                  <li key={item} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem', fontWeight: 600, color: 'var(--global-primary)' }}>
+                    <span style={{ color: 'var(--global-accent)', fontSize: '1.2rem' }}>✓</span> {item}
+                  </li>
+                ))}
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div className="section-header reveal text-center">
+            <span className="section-label">Operations</span>
+            <h2>Our Global Infrastructure</h2>
+            <p className="section-subtitle">A robust network of logistics hubs and trade corridors spanning five continents.</p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '2rem', marginTop: '4rem' }}>
+            {[1, 2, 3, 4, 5].map(num => (
+              <div key={num} className="reveal stagger-1" style={{ height: '350px', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.1)' }}>
+                <img src={`/import${num}.jpg`} alt={`Logistics Infrastructure ${num}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+            ))}
           </div>
         </div>
       </section>

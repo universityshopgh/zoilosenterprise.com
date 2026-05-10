@@ -9,7 +9,7 @@ export default function VolunteerPage() {
     <div className={styles.page}>
       <header className={styles.header} data-bg="true" style={{ 
         '--watermark': "'VOLUNTEER'",
-        backgroundImage: 'url("https://images.unsplash.com/photo-1584515933487-779824d29309")'
+        backgroundImage: 'url("/ghana_community.jpg")'
       } as React.CSSProperties}>
         <div className={styles.headerOverlay}></div>
         <div className={`container ${styles.headerContainer}`}>

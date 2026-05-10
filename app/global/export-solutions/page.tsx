@@ -9,7 +9,7 @@ export default function ExportSolutionsPage() {
     <div className={styles.page}>
       <header className={styles.header} data-bg="true" style={{ 
         '--watermark': "'EXPORT'",
-        backgroundImage: 'url("https://images.unsplash.com/photo-1494412651409-8963ce7935a7")'
+        backgroundImage: 'url("/import3.jpg")'
       } as React.CSSProperties}>
         <div className={styles.headerOverlay}></div>
         <div className={`container ${styles.headerContainer}`}>
@@ -66,7 +66,7 @@ export default function ExportSolutionsPage() {
               </ul>
             </div>
             <div className={`${styles.splitImage} reveal stagger-1`}>
-              <img src="/import_export2.jpg" alt="Cargo Ship" />
+              <img src="/import4.jpg" alt="Cargo Ship" />
             </div>
           </div>
 

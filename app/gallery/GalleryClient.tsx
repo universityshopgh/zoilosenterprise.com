@@ -1,37 +1,34 @@
 'use client'
+import Link from 'next/link'
 import { useState } from 'react'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import styles from './gallery.module.css'
 
 const galleryItems = [
-  { id: 1,  category: 'Realty',     title: 'Luxury Penthouse', color: '#D4A843', size: 'large', img: '/realty_unreal1.jpg' },
-  { id: 2,  category: 'Global',     title: 'Logistics Hub',    color: '#FF8F00', size: 'tall', img: '/import_export1.jpg' },
-  { id: 3,  category: 'Foundation', title: 'School Building',  color: '#FF6B35', size: 'normal', img: '/orphanage_unreal1.jpg' },
-  { id: 4,  category: 'Realty',     title: 'Modern Villa',     color: '#D4A843', size: 'normal', img: '/realty_unreal2.jpg' },
-  { id: 5,  category: 'Global',     title: 'Cargo Ship',       color: '#FF8F00', size: 'wide', img: '/import_export2.jpg' },
-  { id: 6,  category: 'Foundation', title: 'Happy Children',   color: '#FF6B35', size: 'normal', img: '/orphnage_unreal2.jpg' },
-  { id: 7,  category: 'Realty',     title: 'Commercial Plaza', color: '#D4A843', size: 'tall', img: '/realty_unreal3.jpg' },
-  { id: 8,  category: 'Global',     title: 'Trade Route',      color: '#FF8F00', size: 'large', img: '/import_export3.jpg' },
-  { id: 9,  category: 'Foundation', title: 'Medical Camp',     color: '#FF6B35', size: 'normal', img: '/orphanage_unreal3.jpg' },
-  { id: 10, category: 'Realty',     title: 'Ocean View',       color: '#D4A843', size: 'normal', img: '/realty_unreal4.jpg' },
-  { id: 11, category: 'Global',     title: 'Storage Facility', color: '#FF8F00', size: 'wide', img: '/import_export4.jpg' },
-  { id: 12, category: 'Foundation', title: 'Clean Water',      color: '#FF6B35', size: 'tall', img: '/orphange_unreal4.jpg' },
+  { id: 1,  category: 'Realty',     title: 'Luxury Estate, Accra',      color: '#D4A843', size: 'large',  img: '/realestate1.jpg' },
+  { id: 2,  category: 'Global',     title: 'Tema Container Port',        color: '#FF8F00', size: 'tall',   img: '/import1.jpg' },
+  { id: 3,  category: 'Foundation', title: 'Zoilos Foundation Impact',   color: '#FF6B35', size: 'normal', img: '/orphange1.jpg' },
+  { id: 4,  category: 'Realty',     title: 'Modern Villa, East Legon',   color: '#D4A843', size: 'tall',   img: '/realestate2.jpg' },
+  { id: 5,  category: 'Global',     title: 'Accra Trade Market',         color: '#FF8F00', size: 'wide',   img: '/import2.jpg' },
+  { id: 6,  category: 'Foundation', title: 'Community Outreach',         color: '#FF6B35', size: 'wide',   img: '/orphange2.jpg' },
+  { id: 7,  category: 'Realty',     title: 'Commercial Plaza, Airport',  color: '#D4A843', size: 'normal', img: '/realestate3.jpg' },
+  { id: 8,  category: 'Global',     title: 'Freight & Logistics Hub',    color: '#FF8F00', size: 'large',  img: '/import3.jpg' },
+  { id: 9,  category: 'Foundation', title: 'Healthcare Support',         color: '#FF6B35', size: 'normal', img: '/orphange3.jpg' },
+  { id: 10, category: 'Realty',     title: 'Premium Estate, Labone',     color: '#D4A843', size: 'wide',   img: '/realestate4.jpg' },
+  { id: 11, category: 'Global',     title: 'Business Partnership',       color: '#FF8F00', size: 'normal', img: '/import4.jpg' },
+  { id: 12, category: 'Foundation', title: 'Children\'s Welfare',        color: '#FF6B35', size: 'tall',   img: '/orphange4.jpg' },
 ]
 
 export default function GalleryClient() {
-  const [filter, setFilter] = useState('All')
+  const [filter, setFilter] = useState('Realty')
   useScrollReveal([filter])
 
-  const filteredItems = filter === 'All' 
-    ? galleryItems 
-    : galleryItems.filter(item => item.category === filter)
+  const filteredItems = galleryItems.filter(item => item.category === filter)
 
-  const categories = ['All', 'Realty', 'Global', 'Foundation']
-  
-  const getCount = (cat: string) => {
-    if (cat === 'All') return galleryItems.length
-    return galleryItems.filter(item => item.category === cat).length
-  }
+  const categories = ['Realty', 'Global', 'Foundation']
+
+  const getCount = (cat: string) =>
+    galleryItems.filter(item => item.category === cat).length
 
   return (
     <div className={styles.page}>
@@ -60,9 +57,10 @@ export default function GalleryClient() {
               </div>
             </div>
 
-            <div className={styles.grid}>
+            <div className={styles.grid} key={filter}>
               {filteredItems.map((item, i) => (
-                <div 
+                <Link 
+                  href={item.category === 'Realty' ? '/realty' : item.category === 'Global' ? '/global' : '/foundation'}
                   key={item.id} 
                   className={`${styles.card} ${styles['card_' + item.size]} reveal stagger-${i % 4}`}
                 >
@@ -75,7 +73,7 @@ export default function GalleryClient() {
                     <span className={styles.category}>{item.category}</span>
                     <h3>{item.title}</h3>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

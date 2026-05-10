@@ -8,19 +8,22 @@ const services = [
     title: 'Zoilos Realty',
     description: 'Expert guidance in luxury residential and commercial real estate.',
     items: ['Property Sales', 'Leasing', 'Valuation', 'Consultancy'],
-    color: '#D4A843'
+    color: '#D4A843',
+    img: '/realestate1.jpg'
   },
   {
     title: 'Zoilos Global',
     description: 'Strategic logistics and international trade solutions.',
     items: ['Supply Chain', 'Freight', 'Customs', 'Distribution'],
-    color: '#FF8F00'
+    color: '#FF8F00',
+    img: '/import1.jpg'
   },
   {
     title: 'Zoilos Foundation',
     description: 'Empowering communities through sustainable development.',
     items: ['Education', 'Healthcare', 'Infrastructure', 'Sustainability'],
-    color: '#FF6B35'
+    color: '#FF6B35',
+    img: '/orphange1.jpg'
   }
 ]
 
@@ -31,8 +34,11 @@ export default function ServicesClient() {
     <div className={styles.page}>
       <header className={styles.header}>
         <div className="container">
-          <h1 className="reveal">Our Services</h1>
-          <p className="reveal stagger-1">Comprehensive excellence across three distinct sectors.</p>
+          <div className={`${styles.headerCard} reveal`}>
+            <h1 className={styles.title}>Our Services</h1>
+            <div className={styles.titleLine} />
+            <p className={styles.subtitle}>Comprehensive excellence across three distinct sectors, bridging the gap between local impact and global reach.</p>
+          </div>
         </div>
       </header>
 
@@ -47,6 +53,9 @@ export default function ServicesClient() {
               >
                 <div className={styles.cardAccent} />
                 <span className={styles.cardNumber}>0{i + 1}</span>
+                <div className={styles.cardImg}>
+                   <img src={service.img} alt={service.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
                 <div className={styles.cardHeader}>
                   <span className={styles.brandTag}>{service.title.split(' ')[1]} Division</span>
                   <h2>{service.title}</h2>

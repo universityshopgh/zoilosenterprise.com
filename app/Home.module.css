@@ -7,14 +7,38 @@
 /* ─── HERO ─── */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(to right, rgba(11, 26, 46, 0.95) 0%, rgba(11, 26, 46, 0.6) 50%, rgba(11, 26, 46, 0.4) 100%), url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab") center/cover no-repeat;
   position: relative;
-  display: flex;
   display: flex;
   align-items: center;
   color: var(--zoilos-white);
   overflow: hidden;
   padding-top: 100px;
+}
+
+/* Ghana real estate background image with slow zoom */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/ghana_hero_bg.png') center/cover no-repeat;
+  animation: slowZoom 22s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+/* Cinematic overlay — deep navy on left (text side), warm amber tint on right */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      105deg,
+      rgba(8, 18, 33, 0.96) 0%,
+      rgba(11, 26, 46, 0.82) 38%,
+      rgba(18, 30, 50, 0.55) 62%,
+      rgba(90, 55, 15, 0.25) 100%
+    );
+  z-index: 1;
 }
 
 /* Hero content grid */

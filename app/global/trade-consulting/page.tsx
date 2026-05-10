@@ -9,7 +9,7 @@ export default function TradeConsultingPage() {
     <div className={styles.page}>
       <header className={styles.header} data-bg="true" style={{ 
         '--watermark': "'CONSULTING'",
-        backgroundImage: 'url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab")'
+        backgroundImage: 'url("/import1.jpg")'
       } as React.CSSProperties}>
         <div className={styles.headerOverlay}></div>
         <div className={`container ${styles.headerContainer}`}>
@@ -66,7 +66,7 @@ export default function TradeConsultingPage() {
               </ul>
             </div>
             <div className={`${styles.splitImage} reveal stagger-1`}>
-              <img src="/import_export2.jpg" alt="Consulting Meeting" />
+              <img src="/import2.jpg" alt="Consulting Meeting" />
             </div>
           </div>
 

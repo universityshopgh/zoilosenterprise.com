@@ -7,9 +7,10 @@ export default function RealtyPage() {
   useScrollReveal()
 
   const listings = [
-    { id: 1, title: 'Modern Executive Penthouse', loc: 'Downtown Financial District', price: '$2.5M', img: '/realty_unreal3.jpg' },
-    { id: 2, title: 'Luxury Waterfront Villa', loc: 'Coastal Reserve', price: '$4.2M', img: '/realty_unreal4.jpg' },
-    { id: 3, title: 'Heritage Manor Estate', loc: 'Green Hills Valley', price: '$3.8M', img: '/realty_unreal1.jpg' },
+    { id: 1, title: 'Zoilos Luxury Heights', loc: 'Airport Residential, Accra', price: '$1.5M', img: '/realestate1.jpg' },
+    { id: 2, title: 'The Emerald Gardens', loc: 'East Legon, Ghana', price: '$2.2M', img: '/realestate2.jpg' },
+    { id: 3, title: 'Sapphire Waterfront', loc: 'Ada Foah, Coastal Region', price: '$3.8M', img: '/realestate3.jpg' },
+    { id: 4, title: 'Grand Regency Estate', loc: 'Kumasi Metropolitan', price: '$1.2M', img: '/realestate4.jpg' },
   ]
 
   return (
@@ -33,9 +34,9 @@ export default function RealtyPage() {
         <div className="container">
           <div className={`${styles.statsGrid} reveal`}>
             {[
-              { label: 'Properties Managed', val: '250+' },
-              { label: 'Portfolio Value', val: '$1.2B+' },
-              { label: 'Prime Locations', val: '15+' },
+              { label: 'Properties Managed', val: '50+' },
+              { label: 'Portfolio Value', val: '$120M+' },
+              { label: 'Prime Locations', val: '7+' },
               { label: 'Client Retention', val: '98%' },
             ].map((s, i) => (
               <div key={s.label} className={`stagger-${i}`}>

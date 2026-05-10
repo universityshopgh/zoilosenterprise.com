@@ -9,7 +9,7 @@ export default function ValuationServicesPage() {
     <div className={styles.page}>
       <header className={styles.header} data-bg="true" style={{ 
         '--watermark': "'VALUATION'",
-        backgroundImage: 'url("https://images.unsplash.com/photo-1551288049-bebda4e38f71")'
+        backgroundImage: 'url("/realestate3.jpg")'
       } as React.CSSProperties}>
         <div className={styles.headerOverlay}></div>
         <div className={`container ${styles.headerContainer}`}>
@@ -49,6 +49,30 @@ export default function ValuationServicesPage() {
             </div>
           </section>
 
+          <div className={styles.bentoGrid}>
+            <div className={`${styles.bentoItem} ${styles.tall}`}>
+              <img src="/realestate3.jpg" alt="Concierge Service" className={styles.bentoImg} />
+              <div className={styles.bentoContent}>
+                <h3>White-Glove Tenant Relations</h3>
+                <p>24/7 concierge-level support for premium residential and commercial tenants.</p>
+              </div>
+            </div>
+            <div className={styles.bentoItem}>
+              <img src="/realestate4.jpg" alt="Financial Reporting" className={styles.bentoImg} />
+              <div className={styles.bentoContent}>
+                <h3>Transparent Financials</h3>
+                <p>Real-time, audited financial reporting on asset performance.</p>
+              </div>
+            </div>
+            <div className={styles.bentoItem}>
+              <img src="/realestate1.jpg" alt="Preventative Maintenance" className={styles.bentoImg} />
+              <div className={styles.bentoContent}>
+                <h3>Proactive Maintenance</h3>
+                <p>Predictive upkeep to prevent depreciation.</p>
+              </div>
+            </div>
+          </div>
+
           <div className={styles.splitLayout} data-reverse="true">
             <div className="reveal">
               <h3>Why Zoilos Valuation?</h3>
@@ -66,7 +90,7 @@ export default function ValuationServicesPage() {
               </ul>
             </div>
             <div className={`${styles.splitImage} reveal stagger-1`}>
-              <img src="/realty_unreal1.jpg" alt="Data Analysis" />
+              <img src="/realestate3.jpg" alt="Modern Apartment" />
             </div>
           </div>
 

@@ -9,7 +9,7 @@ export default function OurProgramsPage() {
     <div className={styles.page}>
       <header className={styles.header} data-bg="true" style={{ 
         '--watermark': "'PROGRAMS'",
-        backgroundImage: 'url("https://images.unsplash.com/photo-1509062522246-3755977927d7")'
+        backgroundImage: 'url("/ghana_school.jpg")'
       } as React.CSSProperties}>
         <div className={styles.headerOverlay}></div>
         <div className={`container ${styles.headerContainer}`}>

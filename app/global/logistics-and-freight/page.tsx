@@ -9,7 +9,7 @@ export default function LogisticsFreightPage() {
     <div className={styles.page}>
       <header className={styles.header} data-bg="true" style={{ 
         '--watermark': "'LOGISTICS'",
-        backgroundImage: 'url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d")'
+        backgroundImage: 'url("/import4.jpg")'
       } as React.CSSProperties}>
         <div className={styles.headerOverlay}></div>
         <div className={`container ${styles.headerContainer}`}>
@@ -26,21 +26,21 @@ export default function LogisticsFreightPage() {
             
             <div className={styles.bentoGrid}>
               <div className={`${styles.bentoItem} ${styles.tall}`}>
-                <img src="/import_export1.jpg" alt="Ocean Freight" className={styles.bentoImg} />
+                <img src="/import2.jpg" alt="Ocean Freight" className={styles.bentoImg} />
                 <div className={styles.bentoContent}>
                   <h3>Ocean Freight</h3>
                   <p>FCL and LCL shipping for high-volume, cost-effective global transport.</p>
                 </div>
               </div>
               <div className={styles.bentoItem}>
-                <img src="/import_export2.jpg" alt="Air Freight" className={styles.bentoImg} />
+                <img src="/import3.jpg" alt="Air Freight" className={styles.bentoImg} />
                 <div className={styles.bentoContent}>
                   <h3>Air Freight</h3>
                   <p>Express delivery for time-sensitive and high-value commodities.</p>
                 </div>
               </div>
               <div className={styles.bentoItem}>
-                <img src="/import_export3.jpg" alt="Land Transport" className={styles.bentoImg} />
+                <img src="/import5.jpg" alt="Land Transport" className={styles.bentoImg} />
                 <div className={styles.bentoContent}>
                   <h3>Ground Logistics</h3>
                   <p>Robust rail and trucking networks for seamless final-mile delivery.</p>
@@ -66,7 +66,7 @@ export default function LogisticsFreightPage() {
               </ul>
             </div>
             <div className={`${styles.splitImage} reveal stagger-1`}>
-              <img src="/import_export4.jpg" alt="Warehouse Operations" />
+              <img src="/import1.jpg" alt="Warehouse Operations" />
             </div>
           </div>
 

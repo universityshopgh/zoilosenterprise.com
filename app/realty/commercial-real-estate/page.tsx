@@ -9,7 +9,7 @@ export default function CommercialRealEstatePage() {
     <div className={styles.page}>
       <header className={styles.header} data-bg="true" style={{ 
         '--watermark': "'COMMERCIAL'",
-        backgroundImage: 'url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab")'
+        backgroundImage: 'url("/realestate4.jpg")'
       } as React.CSSProperties}>
         <div className={styles.headerOverlay}></div>
         <div className={`container ${styles.headerContainer}`}>
@@ -66,7 +66,7 @@ export default function CommercialRealEstatePage() {
               </ul>
             </div>
             <div className={`${styles.splitImage} reveal stagger-1`}>
-              <img src="/realty_unreal2.jpg" alt="Corporate Office" />
+              <img src="/realestate2.jpg" alt="Corporate Office" />
             </div>
           </div>
 

@@ -4,26 +4,41 @@ import { useEffect, useRef, useState } from 'react'
 export function useScrollReveal(deps: any[] = []) {
   useEffect(() => {
     let observer: IntersectionObserver | null = null;
-    const timeout = setTimeout(() => {
-      const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right')
+    const elementsToUnobserve: Element[] = [];
+
+    const setupObserver = () => {
+      const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+      if (elements.length === 0) return;
+
       observer = new IntersectionObserver(
         entries => {
           entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible')
-              observer?.unobserve(entry.target)
+            if (entry.isIntersecting && entry.target) {
+              entry.target.classList.add('visible');
+              observer?.unobserve(entry.target);
             }
-          })
+          });
         },
-        { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
-      )
-      elements.forEach(el => observer?.observe(el))
-    }, 50)
+        { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+      );
+
+      elements.forEach(el => {
+        if (el) {
+          observer?.observe(el);
+          elementsToUnobserve.push(el);
+        }
+      });
+    };
+
+    const timeout = setTimeout(setupObserver, 150);
 
     return () => {
-      clearTimeout(timeout)
-      observer?.disconnect()
-    }
+      clearTimeout(timeout);
+      if (observer) {
+        elementsToUnobserve.forEach(el => observer?.unobserve(el));
+        observer.disconnect();
+      }
+    };
   }, [JSON.stringify(deps)])
 }
 

@@ -9,7 +9,7 @@ export default function ImportServicesPage() {
     <div className={styles.page}>
       <header className={styles.header} data-bg="true" style={{ 
         '--watermark': "'IMPORT'",
-        backgroundImage: 'url("https://images.unsplash.com/photo-1578575437130-527eed3abbec")'
+        backgroundImage: 'url("/import2.jpg")'
       } as React.CSSProperties}>
         <div className={styles.headerOverlay}></div>
         <div className={`container ${styles.headerContainer}`}>
@@ -26,21 +26,21 @@ export default function ImportServicesPage() {
             
             <div className={styles.bentoGrid}>
               <div className={`${styles.bentoItem} ${styles.large}`}>
-                <img src="/import_export4.jpg" alt="Shipping Container Port" className={styles.bentoImg} />
+                <img src="/import1.jpg" alt="Shipping Container Port" className={styles.bentoImg} />
                 <div className={styles.bentoContent}>
                   <h3>High-Volume Procurement</h3>
                   <p>Securing competitive pricing for bulk industrial and commercial goods.</p>
                 </div>
               </div>
               <div className={styles.bentoItem}>
-                <img src="/import_export1.jpg" alt="Contracts & Negotiation" className={styles.bentoImg} />
+                <img src="/import4.jpg" alt="Contracts & Negotiation" className={styles.bentoImg} />
                 <div className={styles.bentoContent}>
                   <h3>Vendor Negotiation</h3>
                   <p>Expert contract mediation and terms structuring.</p>
                 </div>
               </div>
               <div className={styles.bentoItem}>
-                <img src="/import_export2.jpg" alt="Quality Control" className={styles.bentoImg} />
+                <img src="/import5.jpg" alt="Quality Control" className={styles.bentoImg} />
                 <div className={styles.bentoContent}>
                   <h3>Quality Assurance</h3>
                   <p>On-the-ground inspection prior to shipment.</p>
@@ -66,7 +66,7 @@ export default function ImportServicesPage() {
               </ul>
             </div>
             <div className={`${styles.splitImage} reveal stagger-1`}>
-              <img src="/import_export3.jpg" alt="Customs Documents" />
+              <img src="/import3.jpg" alt="Customs Documents" />
             </div>
           </div>
 

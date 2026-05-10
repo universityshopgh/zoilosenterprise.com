@@ -9,7 +9,7 @@ export default function PropertyListingsPage() {
     <div className={styles.page}>
       <header className={styles.header} data-bg="true" style={{ 
         '--watermark': "'PORTFOLIO'",
-        backgroundImage: 'url("https://images.unsplash.com/photo-1600596542815-ffad4c1539a9")'
+        backgroundImage: 'url("/realestate1.jpg")'
       } as React.CSSProperties}>
         <div className={styles.headerOverlay}></div>
         <div className={`container ${styles.headerContainer}`}>
@@ -26,21 +26,21 @@ export default function PropertyListingsPage() {
             
             <div className={styles.bentoGrid}>
               <div className={`${styles.bentoItem} ${styles.large}`}>
-                <img src="/realty_unreal3.jpg" alt="Off-Market Acquisitions" className={styles.bentoImg} />
+                <img src="/realestate2.jpg" alt="Off-Market Acquisitions" className={styles.bentoImg} />
                 <div className={styles.bentoContent}>
                   <h3>Off-Market Acquisitions</h3>
                   <p>Exclusive properties reserved for our private client network.</p>
                 </div>
               </div>
               <div className={styles.bentoItem}>
-                <img src="/realty_unreal4.jpg" alt="Executive Penthouses" className={styles.bentoImg} />
+                <img src="/realestate3.jpg" alt="Executive Penthouses" className={styles.bentoImg} />
                 <div className={styles.bentoContent}>
                   <h3>Executive Penthouses</h3>
                   <p>Skyline views and unparalleled luxury.</p>
                 </div>
               </div>
               <div className={styles.bentoItem}>
-                <img src="/realty_unreal1.jpg" alt="Private Estates" className={styles.bentoImg} />
+                <img src="/realestate4.jpg" alt="Private Estates" className={styles.bentoImg} />
                 <div className={styles.bentoContent}>
                   <h3>Private Estates</h3>
                   <p>Expansive manors in green-belt valleys.</p>
@@ -66,7 +66,7 @@ export default function PropertyListingsPage() {
               </ul>
             </div>
             <div className={`${styles.splitImage} reveal stagger-1`}>
-              <img src="/realty_unreal2.jpg" alt="Modern Architecture" />
+              <img src="/realestate1.jpg" alt="Modern Architecture" />
             </div>
           </div>
 

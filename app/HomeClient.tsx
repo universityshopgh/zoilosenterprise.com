@@ -24,7 +24,7 @@ const brands = [
     dark:  '#0D2B55',
     desc:  'Premium property listings, luxury real estate consulting, and expert property management across prime locations.',
     features: ['Luxury Properties', 'Commercial Spaces', 'Property Management', 'Investment Advisory'],
-    stat: { value: '250+', label: 'Properties Sold' },
+    stat: { value: '50', label: 'Properties Sold' },
   },
   {
     id:    'global',
@@ -33,9 +33,9 @@ const brands = [
     href:  '/global',
     color: '#FF8F00',
     dark:  '#004D40',
-    desc:  'Connecting markets across 40+ countries with reliable import, export, and international logistics solutions.',
+    desc:  'Connecting markets across 2 countries with reliable import, export, and international logistics solutions.',
     features: ['Import Services', 'Export Solutions', 'Customs Clearance', 'Trade Finance'],
-    stat: { value: '15+', label: 'Countries Served' },
+    stat: { value: '2', label: 'Countries Served' },
   },
   {
     id:    'foundation',
@@ -46,7 +46,7 @@ const brands = [
     dark:  '#4A1942',
     desc:  'Empowering orphaned children with love, education, healthcare, and the tools to build a brighter tomorrow.',
     features: ['Education Programs', 'Medical Care', 'Mentorship', 'Donation Portal'],
-    stat: { value: '700+', label: 'Children Helped' },
+    stat: { value: '100', label: 'People Supported' },
   },
 ]
 
@@ -67,11 +67,11 @@ const process = [
 export default function HomeClient() {
   useScrollReveal()
   const [activeTestimonial, setActiveTestimonial] = useState(0)
-  const [isVisible, setIsVisible]                 = useState(false)
+  const [mounted, setMounted]                     = useState(false)
   const heroRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    setIsVisible(true)
+    setMounted(true)
     const interval = setInterval(() => setActiveTestimonial(v => (v + 1) % testimonials.length), 5000)
     return () => clearInterval(interval)
   }, [])
@@ -84,7 +84,7 @@ export default function HomeClient() {
 
 
         <div className={`container ${styles.heroContent}`}>
-          <div className={`${styles.heroLeft} ${isVisible ? styles.heroVisible : ''}`}>
+          <div className={`${styles.heroLeft} ${mounted ? styles.heroVisible : ''}`} suppressHydrationWarning>
             <div className={styles.heroBadge}>
               Three Pillars · One Legacy
             </div>
@@ -103,19 +103,19 @@ export default function HomeClient() {
             </div>
           </div>
 
-          <div className={`${styles.heroRight} ${isVisible ? styles.heroVisible : ''}`}>
+          <div className={`${styles.heroRight} ${mounted ? styles.heroVisible : ''}`} suppressHydrationWarning>
             <div className={styles.heroStatsBox}>
               <div className={styles.heroStatItem}>
-                <span className={styles.statVal}>250+</span>
+                <span className={styles.statVal}>50</span>
                 <span className={styles.statLabel}>Properties Sold</span>
               </div>
               <div className={styles.heroStatItem}>
-                <span className={styles.statVal}>15+</span>
+                <span className={styles.statVal}>2</span>
                 <span className={styles.statLabel}>Countries Served</span>
               </div>
               <div className={styles.heroStatItem}>
-                <span className={styles.statVal}>700+</span>
-                <span className={styles.statLabel}>Children Supported</span>
+                <span className={styles.statVal}>100</span>
+                <span className={styles.statLabel}>People Supported</span>
               </div>
             </div>
           </div>
@@ -197,12 +197,12 @@ export default function HomeClient() {
           </div>
           <div className={styles.galleryGrid}>
             {[
-              { label: 'Luxury Estates', brand: 'Zoilos Realty', color: '#D4A843', img: '/realty_unreal1.jpg' },
-              { label: 'Global Trade Hub', brand: 'Zoilos Global', color: '#FF8F00', img: '/import_export1.jpg' },
-              { label: 'Children\'s Welfare', brand: 'Zoilos Foundation', color: '#FF6B35', img: '/orphanage_unreal1.jpg' },
-              { label: 'Logistics Network', brand: 'Zoilos Global', color: '#FF8F00', img: '/import_export2.jpg' },
+              { label: 'Children\'s Foundation',   brand: 'Zoilos Foundation',  color: '#FF6B35', img: '/orphange2.jpg', link: '/foundation' },
+              { label: 'Luxury Estate, Accra',    brand: 'Zoilos Realty',      color: '#D4A843', img: '/realestate4.jpg', link: '/realty' },
+              { label: 'Global Trade Hub',        brand: 'Zoilos Global',      color: '#FF8F00', img: '/anotherimport2.jpg', link: '/global' },
+              { label: 'Logistics Network',       brand: 'Zoilos Global',      color: '#FF8F00', img: '/import3.jpg', link: '/global'   },
             ].map((item, i) => (
-              <div key={i} className={`${styles.galleryItem} reveal stagger-${(i % 4) + 1}`}>
+              <Link key={i} href={item.link} className={`${styles.galleryItem} reveal stagger-${(i % 4) + 1}`}>
                 <div style={{ height: '100%', width: '100%', position: 'relative' }}>
                   <img src={item.img} alt={item.label} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(135deg, ${item.color}33, ${item.color}77)`, mixBlendMode: 'multiply' }}></div>
@@ -211,7 +211,7 @@ export default function HomeClient() {
                   <span className={styles.galleryBrand} style={{ color: item.color }}>{item.brand}</span>
                   <span className={styles.galleryName}>{item.label}</span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
           <div className={styles.galleryAction}>

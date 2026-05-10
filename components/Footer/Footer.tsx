@@ -32,10 +32,10 @@ const footerBrands = [
 const companyLinks = ['Home', 'Gallery', 'Services', 'About Us', 'Contact', 'Careers', 'Privacy Policy', 'Terms of Service']
 
 const stats = [
-  { value: '250+', label: 'Properties Sold' },
-  { value: '15+',  label: 'Countries Reached' },
-  { value: '700+', label: 'Children Supported' },
-  { value: '12+',  label: 'Years of Excellence' },
+  { value: '50',  label: 'Properties Sold' },
+  { value: '2',   label: 'Countries Reached' },
+  { value: '100', label: 'People Supported' },
+  { value: '12+', label: 'Years of Excellence' },
 ]
 
 const socials = [
@@ -170,11 +170,11 @@ export default function Footer() {
               {/* Contact Quick */}
                 <div className={styles.contactRow}>
                   <span className={styles.label}>Email:</span>
-                  <span>kingsfordappiah0000@gmail.com</span>
+                  <span>example@gmail.com</span>
                 </div>
                 <div className={styles.contactRow}>
                   <span className={styles.label}>Phone:</span>
-                  <span>+233 59 976 4428</span>
+                  <span>+233 24 345 3547</span>
                 </div>
                 <div className={styles.contactRow}>
                   <span className={styles.label}>Location:</span>

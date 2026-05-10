@@ -9,7 +9,7 @@ export default function SupportAChildPage() {
     <div className={styles.page}>
       <header className={styles.header} data-bg="true" style={{ 
         '--watermark': "'SUPPORT'",
-        backgroundImage: 'url("https://images.unsplash.com/photo-1488521787991-ed7bbaae773c")'
+        backgroundImage: 'url("/ghana_children1.jpg")'
       } as React.CSSProperties}>
         <div className={styles.headerOverlay}></div>
         <div className={`container ${styles.headerContainer}`}>

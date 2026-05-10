@@ -3,7 +3,7 @@
 }
 
 .hero {
-  background: linear-gradient(rgba(11, 26, 46, 0.85), rgba(11, 26, 46, 0.85)), url("https://images.unsplash.com/photo-1512917774080-9991f1c4c750") center/cover no-repeat;
+  background: linear-gradient(rgba(11, 26, 46, 0.80), rgba(11, 26, 46, 0.80)), url("/realestate1.jpg") center/cover no-repeat;
   color: white;
   padding: 10rem 0 12rem;
   text-align: center;
@@ -99,8 +99,8 @@
 /* ── Typographic Listings & Grids ── */
 .listingsGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.5rem;
 }
 
 .listingCard {

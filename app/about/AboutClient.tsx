@@ -16,33 +16,26 @@ export default function AboutClient() {
       </header>
 
       <section className="section">
-        <div className="container">
-          <div className={styles.grid}>
-            <div className="reveal">
-              <div style={{ height: '500px', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
-                <img src="/hero-corporate.jpg" alt="Our Heritage" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        <div className="container container--narrow">
+          <div className={`${styles.content} reveal`}>
+            <span className="section-label">Executive Summary</span>
+            <h2>Building Legacies Through<br />Strategic Investment</h2>
+            <p>Zoilos Group was founded on the principle that business should be a force for both economic growth and social good. What started as a focused real estate firm has evolved into a multi-disciplinary holding group with global reach, connecting markets and supporting communities.</p>
+            
+            <div className={styles.pillars}>
+              <div className={styles.pillar}>
+                <h3>OUR VISION</h3>
+                <p>To be the global benchmark for diversified excellence, bridging the gap between luxury, commerce, and humanitarian impact.</p>
+              </div>
+              <div className={styles.pillar}>
+                <h3>OUR MISSION</h3>
+                <p>To deliver unparalleled value in real estate and trade while creating sustainable, direct impact through our philanthropic foundation.</p>
               </div>
             </div>
-            <div className={`${styles.content} reveal stagger-1`}>
-              <span className="section-label">Executive Summary</span>
-              <h2>Building Legacies Through<br />Strategic Investment</h2>
-              <p>Zoilos Group was founded on the principle that business should be a force for both economic growth and social good. What started as a focused real estate firm has evolved into a multi-disciplinary holding group with global reach, connecting markets and supporting communities.</p>
-              
-              <div className={styles.pillars}>
-                <div className={styles.pillar}>
-                  <h3>OUR VISION</h3>
-                  <p>To be the global benchmark for diversified excellence, bridging the gap between luxury, commerce, and humanitarian impact.</p>
-                </div>
-                <div className={styles.pillar}>
-                  <h3>OUR MISSION</h3>
-                  <p>To deliver unparalleled value in real estate and trade while creating sustainable, direct impact through our philanthropic foundation.</p>
-                </div>
-              </div>
-              
-              <div className={`${styles.summaryActions} reveal stagger-2`}>
-                <Link href="/contact" className="btn btn-primary">Partner With Us</Link>
-                <Link href="/gallery" className="btn btn-outline">Explore Portfolio</Link>
-              </div>
+            
+            <div className={`${styles.summaryActions} reveal stagger-2`}>
+              <Link href="/contact" className="btn btn-primary">Partner With Us</Link>
+              <Link href="/gallery" className="btn btn-outline">Explore Portfolio</Link>
             </div>
           </div>
         </div>
@@ -109,8 +102,8 @@ export default function AboutClient() {
           </div>
           <div className={styles.leadershipGrid}>
             {[
-              { name: 'Dr. Arthur Zoilos', role: 'CEO & Founder', bio: 'With over 25 years in international trade and property development.', img: '/realty_unreal1.jpg' },
-              { name: 'Marcus Chen', role: 'Lead Operations Manager', bio: 'Expert in supply chain logistics and emerging market connections.', img: '/realty_unreal2.jpg' },
+              { name: 'Dr. Arthur Zoilos', role: 'CEO & Founder', bio: 'Over 25 years leading international trade and property development across West Africa and beyond.', img: '/ceo.jpg' },
+              { name: 'Kwaku Appiah', role: 'Head of Operations, Ghana', bio: 'Expert in supply chain logistics and West African emerging market strategy.', img: '/managerbetter.jpg' },
             ].map((leader, i) => (
               <Link href={`/contact?subject=Connecting with ${leader.name}`} key={leader.name} className={`${styles.leaderCard} reveal stagger-${i}`}>
                 <div className={styles.leaderImg}>

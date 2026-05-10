@@ -27,16 +27,31 @@ export default function FoundationPage() {
         <div className="container">
           <div className={`${styles.statsGrid} reveal`}>
             {[
-              { label: 'Children Supported', val: '700+' },
-              { label: 'Schools Funded', val: '150+' },
-              { label: 'Medical Programs', val: '50+' },
-              { label: 'Communities', val: '25+' },
+              { label: 'Countries Supported', val: '2' },
+              { label: 'Tons of Supplies Shipped', val: '100+' },
+              { label: 'Active Initiatives', val: '7+' },
             ].map((s, i) => (
               <div key={s.label} className={`stagger-${i}`}>
                 <div className={styles.statItem}>
                   <span className={styles.statVal}>{s.val}</span>
                   <span className={styles.statLabel}>{s.label}</span>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section" style={{ background: '#f8fafc' }}>
+        <div className="container">
+          <div className="section-header reveal">
+            <span className="section-label">Gallery</span>
+            <h2>Our Reach in Action</h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.5rem' }}>
+            {['orphange1.jpg', 'orphange2.jpg', 'orphange3.jpg', 'orphange4.jpg'].map((img, i) => (
+              <div key={i} className="reveal stagger-1" style={{ height: '300px', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}>
+                <img src={`/${img}`} alt={`Foundation Impact ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
             ))}
           </div>
@@ -50,20 +65,35 @@ export default function FoundationPage() {
             <h2>Direct Change in the Community</h2>
           </div>
           <div className={styles.impactGrid}>
-            <div className={`${styles.impactCard} reveal stagger-0`}>
-              <span style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--found-accent)', letterSpacing: '0.15em', display: 'block', marginBottom: '1.5rem' }}>01 / LEARNING</span>
-              <h3>Education</h3>
-              <p>Funding schools, building infrastructure, and providing necessary educational materials to ensure long-term intellectual growth.</p>
+            <div className={`${styles.impactCard} reveal stagger-0`} style={{ padding: 0 }}>
+              <div style={{ height: '200px', width: '100%', overflow: 'hidden' }}>
+                <img src="/orphange4.jpg" alt="Education" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+              <div style={{ padding: '3rem' }}>
+                <span style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--found-accent)', letterSpacing: '0.15em', display: 'block', marginBottom: '1.5rem' }}>01 / LEARNING</span>
+                <h3>Education</h3>
+                <p>Funding schools, building infrastructure, and providing necessary educational materials to ensure long-term intellectual growth.</p>
+              </div>
             </div>
-            <div className={`${styles.impactCard} reveal stagger-1`}>
-              <span style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--found-accent)', letterSpacing: '0.15em', display: 'block', marginBottom: '1.5rem' }}>02 / WELLNESS</span>
-              <h3>Healthcare</h3>
-              <p>Ensuring every child in our care has access to critical medical support, vaccinations, and continuous health monitoring.</p>
+            <div className={`${styles.impactCard} reveal stagger-1`} style={{ padding: 0 }}>
+              <div style={{ height: '200px', width: '100%', overflow: 'hidden' }}>
+                <img src="/orphange2.jpg" alt="Healthcare" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+              <div style={{ padding: '3rem' }}>
+                <span style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--found-accent)', letterSpacing: '0.15em', display: 'block', marginBottom: '1.5rem' }}>02 / WELLNESS</span>
+                <h3>Healthcare</h3>
+                <p>Ensuring every child in our care has access to critical medical support, vaccinations, and continuous health monitoring.</p>
+              </div>
             </div>
-            <div className={`${styles.impactCard} reveal stagger-2`}>
-              <span style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--found-accent)', letterSpacing: '0.15em', display: 'block', marginBottom: '1.5rem' }}>03 / SHELTER</span>
-              <h3>Safe Housing</h3>
-              <p>Building and maintaining secure, nurturing environments where vulnerable children can grow without fear.</p>
+            <div className={`${styles.impactCard} reveal stagger-2`} style={{ padding: 0 }}>
+              <div style={{ height: '200px', width: '100%', overflow: 'hidden' }}>
+                <img src="/orphange3.jpg" alt="Safe Housing" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+              <div style={{ padding: '3rem' }}>
+                <span style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--found-accent)', letterSpacing: '0.15em', display: 'block', marginBottom: '1.5rem' }}>03 / SHELTER</span>
+                <h3>Safe Housing</h3>
+                <p>Building and maintaining secure, nurturing environments where vulnerable children can grow without fear.</p>
+              </div>
             </div>
           </div>
         </div>

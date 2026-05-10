@@ -9,7 +9,7 @@ export default function PropertyManagementPage() {
     <div className={styles.page}>
       <header className={styles.header} data-bg="true" style={{ 
         '--watermark': "'MANAGEMENT'",
-        backgroundImage: 'url("https://images.unsplash.com/photo-1545324418-cc1a3fa10c00")'
+        backgroundImage: 'url("/realestate2.jpg")'
       } as React.CSSProperties}>
         <div className={styles.headerOverlay}></div>
         <div className={`container ${styles.headerContainer}`}>
@@ -26,21 +26,21 @@ export default function PropertyManagementPage() {
             
             <div className={styles.bentoGrid}>
               <div className={`${styles.bentoItem} ${styles.tall}`}>
-                <img src="/realty_unreal4.jpg" alt="Concierge Service" className={styles.bentoImg} />
+                <img src="/realestate3.jpg" alt="Concierge Service" className={styles.bentoImg} />
                 <div className={styles.bentoContent}>
                   <h3>White-Glove Tenant Relations</h3>
                   <p>24/7 concierge-level support for premium residential and commercial tenants.</p>
                 </div>
               </div>
               <div className={styles.bentoItem}>
-                <img src="/realty_unreal1.jpg" alt="Financial Reporting" className={styles.bentoImg} />
+                <img src="/realestate4.jpg" alt="Financial Reporting" className={styles.bentoImg} />
                 <div className={styles.bentoContent}>
                   <h3>Transparent Financials</h3>
                   <p>Real-time, audited financial reporting on asset performance.</p>
                 </div>
               </div>
               <div className={styles.bentoItem}>
-                <img src="/realty_unreal2.jpg" alt="Preventative Maintenance" className={styles.bentoImg} />
+                <img src="/realestate1.jpg" alt="Preventative Maintenance" className={styles.bentoImg} />
                 <div className={styles.bentoContent}>
                   <h3>Proactive Maintenance</h3>
                   <p>Predictive upkeep to prevent depreciation.</p>
@@ -66,7 +66,7 @@ export default function PropertyManagementPage() {
               </ul>
             </div>
             <div className={`${styles.splitImage} reveal stagger-1`}>
-              <img src="/realty_unreal3.jpg" alt="Modern Apartment" />
+              <img src="/realestate3.jpg" alt="Modern Apartment" />
             </div>
           </div>
 

@@ -9,7 +9,7 @@ export default function DonationPortalPage() {
     <div className={styles.page}>
       <header className={styles.header} data-bg="true" style={{ 
         '--watermark': "'DONATE'",
-        backgroundImage: 'url("https://images.unsplash.com/photo-1532629345422-7515f3d16bb6")'
+        backgroundImage: 'url("/ghana_children2.jpg")'
       } as React.CSSProperties}>
         <div className={styles.headerOverlay}></div>
         <div className={`container ${styles.headerContainer}`}>

@@ -6,10 +6,10 @@ import styles from './Navbar.module.css'
 
 const navLinks = [
   { label: 'Home',     href: '/'         },
-  { label: 'Gallery',  href: '/gallery'  },
-  { label: 'Services', href: '/services' },
   { label: 'About Us', href: '/about'    },
   { label: 'Contact',  href: '/contact'  },
+  { label: 'Services', href: '/services' },
+  { label: 'Gallery',  href: '/gallery'  },
 ]
 
 const brands = [
@@ -94,9 +94,9 @@ export default function Navbar() {
       <div className={styles.topBar}>
         <div className={`${styles.topInner} container`}>
           <div className={styles.topInfo}>
-            <span>kingsfordappiah0000@gmail.com</span>
+            <span>example@gmail.com</span>
             <span className={styles.topSep}>|</span>
-            <span>+233 59 976 4428</span>
+            <span>+233 24 345 3547</span>
           </div>
           <div className={styles.topMeta}>
              <span>Global Strategic Headquarters</span>

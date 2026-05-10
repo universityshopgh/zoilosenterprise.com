@@ -73,7 +73,7 @@ export default function CareersPage() {
           <h2>Don't see a role for you?</h2>
           <p className="section-subtitle" style={{ color: 'rgba(255,255,255,0.6)' }}>We are always looking for visionary talent. Send us your CV and a brief cover letter.</p>
           <div style={{ marginTop: '3rem' }}>
-            <Link href="mailto:careers@zoilos.com" className="btn btn-primary">General Application</Link>
+            <Link href="mailto:example@gmail.com" className="btn btn-primary">General Application</Link>
           </div>
         </div>
       </section>
