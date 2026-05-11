@@ -53,14 +53,7 @@ export default function ContactClient() {
             {/* Overlay gradient */}
             <div className={styles.heroImgOverlay} />
 
-            {/* Floating Info Card (Extraordinary CSS) */}
-            <div className={`${styles.floatingCard} reveal stagger-4`}>
-              <div className={styles.floatingIcon}>💎</div>
-              <div>
-                <h4>Premium Service</h4>
-                <p>Tailored for Excellence</p>
-              </div>
-            </div>
+
 
             {/* Stats strip */}
             <div className={`${styles.heroStats} reveal stagger-3`}>
