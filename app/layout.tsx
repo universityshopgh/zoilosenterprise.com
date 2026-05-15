@@ -41,6 +41,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  icons: {
+    icon: '/zoiloslogo.jpeg',
+    shortcut: '/zoiloslogo.jpeg',
+    apple: '/zoiloslogo.jpeg',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -55,13 +60,19 @@ export const metadata: Metadata = {
         height: 630,
         alt: 'Zoilos Group Ghana',
       },
+      {
+        url: '/zoiloslogo.jpeg',
+        width: 800,
+        height: 800,
+        alt: 'Zoilos Group Logo',
+      },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Zoilos Group',
     description: 'Excellence in Real Estate, Global Trade, and Philanthropy.',
-    images: ['/ghana_hero_bg.png'],
+    images: ['/ghana_hero_bg.png', '/zoiloslogo.jpeg'],
   },
   robots: {
     index: true,
@@ -80,7 +91,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" />
+
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script
           type="application/ld+json"
@@ -91,6 +102,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               name: 'Zoilos Group',
               url: 'https://zoilosenterprise.com',
               logo: 'https://zoilosenterprise.com/zoiloslogo.jpeg',
+              image: 'https://zoilosenterprise.com/zoiloslogo.jpeg',
               sameAs: [
                 'https://www.facebook.com/zoilosgroup',
                 'https://www.linkedin.com/company/zoilosgroup',

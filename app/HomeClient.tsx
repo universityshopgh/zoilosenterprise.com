@@ -126,7 +126,7 @@ export default function HomeClient() {
       <div className={styles.marqueeSection} aria-label="Brand highlights">
         <div className={styles.marqueeTrack}>
           {[...Array(2)].map((_, rep) => (
-            <div key={rep} className={`marquee-track`}>
+            <div key={rep} className={styles.marqueeTrack}>
               {['Premium Real Estate', '·', 'Global Import & Export', '·', 'Orphanage Foundation', '·',
                 'Zoilos Realty', '·', 'Zoilos Global', '·', 'Zoilos Foundation', '·',
                 'Excellence In Every Sector', '·', 'Trusted Worldwide', '·'].map((item, i) => (
