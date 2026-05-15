@@ -95,6 +95,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script
           type="application/ld+json"
+          suppressHydrationWarning
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
@@ -116,14 +117,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               },
               contactPoint: {
                 '@type': 'ContactPoint',
-                telephone: '+233-000-000-000',
+                telephone: '+233-24-345-3547',
                 contactType: 'customer service',
               },
             }),
           }}
         />
       </head>
-      <body className={inter.className}>
+      <body className={inter.className} suppressHydrationWarning>
         <Navbar />
         <main>{children}</main>
         <Footer />

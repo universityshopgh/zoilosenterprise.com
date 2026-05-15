@@ -1,12 +1,17 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 import styles from './contact.module.css'
 
 export default function ContactClient() {
   useScrollReveal()
+  const [mounted, setMounted] = useState(false)
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -127,18 +132,17 @@ export default function ContactClient() {
                   <p>Message Us Directly</p>
                 </div>
               </a>
-              <div className={styles.method}>
-                <div className={styles.methodIcon}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
-                </div>
+              <a 
+                href="https://www.google.com/maps/place/ZOILOS+ENTERPRISE/@5.6537021,-0.0683621,17z" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={styles.method}
+              >
                 <div>
                   <h3>Strategic HQ</h3>
-                  <p>Accra, Ghana</p>
+                  <p>Accra, Ghana — View Map</p>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
@@ -174,6 +178,47 @@ export default function ContactClient() {
                 <span>2 Countries Primary Focus</span>
                 <span>Global Strategic Partnerships</span>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Interactive Map Section ── */}
+      <section className={styles.interactiveMapSection}>
+        <div className="container">
+          <div className={styles.mapWrap}>
+            <div className={`${styles.mapInfo} reveal`}>
+              <span className="section-label">Visit Us</span>
+              <h2>Our Strategic Headquarters</h2>
+              <p>Located in the heart of Accra's business hub, our office is designed for strategic consulting and global trade coordination.</p>
+              <div className={styles.mapAddress}>
+                <div>
+                  <strong>ZOILOS ENTERPRISE</strong>
+                  <p>Accra, Ghana</p>
+                </div>
+              </div>
+              <a 
+                href="https://www.google.com/maps/place/ZOILOS+ENTERPRISE/@5.6537021,-0.0683621,17z" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn btn-primary"
+                style={{ marginTop: '2rem' }}
+              >
+                Get Directions →
+              </a>
+            </div>
+            <div className={`${styles.mapIframeWrap} reveal stagger-1`}>
+              {mounted && (
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.662241630138!2d-0.07093702391060965!3d5.653702094327575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf8166d22f0d51%3A0xdcd31ace6b8810bd!2sZOILOS%20ENTERPRISE!5e0!3m2!1sen!2sgh!4v1715733300000!5m2!1sen!2sgh" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen={true} 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              )}
             </div>
           </div>
         </div>

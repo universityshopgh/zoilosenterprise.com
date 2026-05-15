@@ -183,7 +183,14 @@ export default function Footer() {
                 </div>
                 <div className={styles.contactRow}>
                   <span className={styles.label}>Location:</span>
-                  <span>Global Strategic Headquarters</span>
+                  <a 
+                    href="https://www.google.com/maps/place/ZOILOS+ENTERPRISE/@5.6537021,-0.0683621,17z" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className={styles.footerMapLink}
+                  >
+                    Global Strategic Headquarters — Accra, Ghana
+                  </a>
                 </div>
             </div>
 

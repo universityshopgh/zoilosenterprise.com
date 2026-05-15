@@ -241,6 +241,16 @@
   font-size: 0.82rem;
   color: rgba(255,255,255,0.5);
 }
+.footerMapLink {
+  color: rgba(255,255,255,0.7);
+  transition: all 0.3s var(--ease-soft);
+  text-decoration: underline;
+  text-decoration-color: rgba(200,169,110,0.3);
+}
+.footerMapLink:hover {
+  color: var(--zoilos-gold);
+  text-decoration-color: var(--zoilos-gold);
+}
 .contactIcon { color: var(--zoilos-gold); font-size: 0.9rem; flex-shrink: 0; margin-top: 1px; }
 
 /* Link Columns */
