@@ -44,8 +44,8 @@ export default function ContactClient() {
         <div className={styles.heroImageWrapper}>
           <div className={styles.heroImagePanel}>
             <Image
-              src="/trythiscontact.jpg"
-              alt="Zoilos Support Team"
+              src="/contact_girl.jpg"
+              alt="contact_girl"
               fill
               priority
               className={styles.heroImg}
@@ -54,6 +54,8 @@ export default function ContactClient() {
             <div className={styles.heroImgOverlay} />
 
 
+            {/* Decorative Corner */}
+            <div className={styles.imageCorner} />
 
             {/* Stats strip */}
             <div className={`${styles.heroStats} reveal stagger-3`}>
@@ -73,6 +75,8 @@ export default function ContactClient() {
               </div>
             </div>
           </div>
+          {/* Secondary background layer for depth */}
+          <div className={styles.imageBackdrop} />
         </div>
 
         {/* Right: Content panel */}
@@ -81,7 +85,7 @@ export default function ContactClient() {
             <span className="section-label reveal">Get in Touch</span>
             <h1 className={`${styles.heroTitle} reveal stagger-1`}>
               We're Here<br />
-              <span className={styles.heroTitleAccent}>For You.</span>
+              <span className={styles.heroTitleAccent}>Strategic Partnerships.</span>
             </h1>
             <p className={`${styles.heroSub} reveal stagger-2`}>
               Whether you need premium real estate, global trade expertise, or want to support our Foundation — our team in Accra is ready to assist.
@@ -100,7 +104,7 @@ export default function ContactClient() {
                   <p>+233 24 345 3547</p>
                 </div>
               </a>
-              <a href="mailto:example@gmail.com" className={styles.method}>
+              <a href="mailto:info@zoilosenterprise.com" className={styles.method}>
                 <div className={styles.methodIcon}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <rect width="20" height="16" x="2" y="4" rx="2" />
@@ -109,7 +113,7 @@ export default function ContactClient() {
                 </div>
                 <div>
                   <h3>Official Email</h3>
-                  <p>example@gmail.com</p>
+                  <p>info@zoilosenterprise.com</p>
                 </div>
               </a>
               <a href="https://wa.me/233243453547" target="_blank" rel="noopener noreferrer" className={styles.method}>
@@ -220,11 +224,11 @@ export default function ContactClient() {
                   <div className={styles.formRow}>
                     <div className={styles.formGroup}>
                       <label htmlFor="name">Full Name</label>
-                      <input name="Name" id="name" type="text" placeholder="Kwame Asante" required disabled={status === 'loading'} />
+                      <input name="Name" id="name" type="text" placeholder="Your Full Name" required disabled={status === 'loading'} />
                     </div>
                     <div className={styles.formGroup}>
                       <label htmlFor="email">Email Address</label>
-                      <input name="Email" id="email" type="email" placeholder="kwame@example.com" required disabled={status === 'loading'} />
+                      <input name="Email" id="email" type="email" placeholder="email@yourcompany.com" required disabled={status === 'loading'} />
                     </div>
                   </div>
                   <div className={styles.formGroup}>

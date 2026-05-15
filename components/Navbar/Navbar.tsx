@@ -94,7 +94,7 @@ export default function Navbar() {
       <div className={styles.topBar}>
         <div className={`${styles.topInner} container`}>
           <div className={styles.topInfo}>
-            <span>example@gmail.com</span>
+            <span>info@zoilosenterprise.com</span>
             <span className={styles.topSep}>|</span>
             <span>+233 24 345 3547</span>
           </div>
@@ -114,7 +114,7 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link href="/" className={styles.logo} aria-label="Zoilos Home">
-            <img src="/logo_zoilos.png" alt="Zoilos Group" className={styles.navbarLogoImg} />
+            <img src="/zoiloslogo.jpeg" alt="Zoilos Group" className={styles.navbarLogoImg} />
           </Link>
 
           {/* Desktop Links */}

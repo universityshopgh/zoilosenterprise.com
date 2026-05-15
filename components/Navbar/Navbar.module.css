@@ -1,5 +1,6 @@
 /* ═══════════════════════════════
    NAVBAR — Zoilos
+Internal branding: Navy & Gold
 ═══════════════════════════════ */
 
 .topBar {
@@ -59,11 +60,12 @@
 .navbarLogoImg {
   height: 100%;
   aspect-ratio: 1 / 1;
-  object-fit: cover; /* Cropping to a perfect circle mark */
+  object-fit: contain; /* Don't crop the new logo */
   display: block;
-  border-radius: 50%; /* Perfect circular form */
-  background: var(--zoilos-navy); /* Base color */
+  border-radius: 50%; /* Original circular form */
+  background: var(--zoilos-navy);
   border: 2px solid var(--zoilos-gold);
+  padding: 4px; /* Slight padding to keep logo from touching edges */
   transition: all 0.4s var(--ease-soft);
   box-shadow: 0 8px 32px rgba(0,0,0,0.3);
 }
@@ -387,7 +389,8 @@
   .topMeta { margin-top: 0; white-space: nowrap; }
   .navbar { top: 28px; } /* Reverted for single-line topBar */
   
-  .logo { height: 35px; }
+  .logo { height: 52px; }
+  .navbarLogoImg { padding: 3px; }
   
   .navLinks    { display: none; }
   .brandSwitcher { display: none; }

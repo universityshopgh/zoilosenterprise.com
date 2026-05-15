@@ -1,9 +1,9 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import styles from './Footer.module.css'
 
-const year = new Date().getFullYear()
+// Year is handled inside component to prevent hydration mismatch
 
 const footerBrands = [
   {
@@ -63,6 +63,11 @@ const socials = [
 
 export default function Footer() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [year, setYear] = useState(2026)
+
+  useEffect(() => {
+    setYear(new Date().getFullYear())
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -153,7 +158,7 @@ export default function Footer() {
             <div className={styles.brandCol}>
               {/* Logo */}
               <div className={styles.footerLogo}>
-                <img src="/logo_zoilos.png" alt="Zoilos Group" className={styles.footerLogoImg} />
+                <img src="/zoiloslogo.jpeg" alt="Zoilos Group" className={styles.footerLogoImg} />
               </div>
               <p className={styles.brandDesc}>
                 A prestigious holding group delivering excellence across three pillars —
@@ -170,7 +175,7 @@ export default function Footer() {
               {/* Contact Quick */}
                 <div className={styles.contactRow}>
                   <span className={styles.label}>Email:</span>
-                  <span>example@gmail.com</span>
+                  <span>info@zoilosenterprise.com</span>
                 </div>
                 <div className={styles.contactRow}>
                   <span className={styles.label}>Phone:</span>

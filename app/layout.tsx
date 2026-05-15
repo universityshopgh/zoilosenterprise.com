@@ -78,7 +78,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -90,7 +90,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               '@type': 'Organization',
               name: 'Zoilos Group',
               url: 'https://zoilosenterprise.com',
-              logo: 'https://zoilosenterprise.com/logo_zoilos.png',
+              logo: 'https://zoilosenterprise.com/zoiloslogo.jpeg',
               sameAs: [
                 'https://www.facebook.com/zoilosgroup',
                 'https://www.linkedin.com/company/zoilosgroup',
