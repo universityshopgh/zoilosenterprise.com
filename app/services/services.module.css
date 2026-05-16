@@ -5,7 +5,7 @@
 
 .header {
   background: linear-gradient(rgba(11, 26, 46, 0.6), rgba(11, 26, 46, 0.6)), 
-              url("/ourserviceshero.jpg") center/cover no-repeat;
+              url("/ourserviceshero.png") center/cover no-repeat;
   background-attachment: fixed;
   color: white;
   padding: 12rem 0 16rem;

@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
-import AboutClient from './AboutClient'
+import dynamic from 'next/dynamic'
+
+const AboutClient = dynamic(() => import('./AboutClient'), { ssr: false })
 
 export const metadata: Metadata = {
   title: 'About Us — Zoilos Group',

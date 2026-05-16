@@ -440,9 +440,10 @@
   margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.6rem;
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.5);
+  align-items: center; /* Center items in the list */
 }
 
 .presenceDivider {
@@ -603,14 +604,60 @@
   .heroImageWrapper { padding: 2rem; height: 50vh; }
   .heroContent { padding: 4rem 2rem; }
   .mapWrap { grid-template-columns: 1fr; }
-  .mapInfo { padding: 3rem 2rem; }
+  .mapInfo { padding: 4.5rem 2.5rem; }
   .mapIframeWrap { min-height: 400px; }
   .faqGrid { grid-template-columns: 1fr; padding: 0 2rem; }
 }
 
-@media (max-width: 640px) {
-  .formRow { grid-template-columns: 1fr; }
-  .formWrap { padding: 2rem; }
-  .heroTitle { font-size: 2.5rem; }
+@media (max-width: 768px) {
+  .page { padding-top: 100px; }
+  .heroTitle { font-size: 2.8rem; }
+  .heroSub { margin-bottom: 2.5rem; font-size: 1.1rem; }
+  .contactMethods { gap: 1rem; }
+  
+  .presenceGrid { 
+    flex-direction: column; 
+    gap: 1.5rem; 
+    margin-top: 3rem;
+  }
+  .presenceCard { 
+    width: 100%; 
+    max-width: 100%; 
+    padding: 2.5rem 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+  }
+  .presenceCard h3 { font-size: 1.6rem; }
+  .presenceDivider { 
+    flex-direction: column; 
+    gap: 0.75rem;
+    margin: 1rem 0;
+  }
+  .presenceDivider .line { 
+    width: 1px; 
+    height: 30px; 
+    background: linear-gradient(to bottom, transparent, var(--zoilos-gold), transparent);
+  }
+  .presenceDivider .planeIcon { 
+    transform: rotate(180deg); 
+    font-size: 1.2rem;
+    opacity: 0.8;
+  }
+  
+  .faqSection, .mapSection, .formSection, .interactiveMapSection { padding: 4rem 0; }
+  .mapWrap { border-radius: 24px; }
   .mapInfo h2 { font-size: 1.8rem; }
+  .formRow { grid-template-columns: 1fr; }
+  .formWrap { padding: 2.5rem 1.25rem; border-radius: 24px; }
+}
+
+@media (max-width: 480px) {
+  .heroTitle { font-size: 1.8rem; }
+  .presenceCard h3 { font-size: 1.3rem; }
+  .presenceDetails { font-size: 0.85rem; gap: 0.4rem; }
+  .formHeader h2 { font-size: 1.8rem; }
+  .method h3 { font-size: 0.65rem; }
+  .method p { font-size: 0.85rem; }
+  .mapAddress { padding: 1rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+  .mapIframeWrap { min-height: 350px; }
 }
