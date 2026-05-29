@@ -102,8 +102,8 @@ export default function AboutClient() {
           </div>
           <div className={styles.leadershipGrid}>
             {[
-              { name: 'Dr. Arthur Zoilos', role: 'CEO & Founder', bio: 'Over 25 years leading international trade and property development across West Africa and beyond.', img: '/ceo.jpg' },
-              { name: 'Kwaku Appiah', role: 'Head of Operations, Ghana', bio: 'Expert in supply chain logistics and West African emerging market strategy.', img: '/managerbetter.jpg' },
+              { name: 'Kwame Apau', role: 'CEO & Founder', bio: 'Over 25 years leading international trade and property development across West Africa and beyond.', img: '/about_page.jpeg' },
+              { name: 'Kwaku Appiah', role: 'Head of Operations, Ghana', bio: 'Expert in supply chain logistics and West African emerging market strategy.', img: '/about_pageleard.jpeg' },
             ].map((leader, i) => (
               <Link href={`/contact?subject=Connecting with ${leader.name}`} key={leader.name} className={`${styles.leaderCard} reveal stagger-${i}`}>
                 <div className={styles.leaderImg}>
