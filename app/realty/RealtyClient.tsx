@@ -7,10 +7,11 @@ export default function RealtyPage() {
   useScrollReveal()
 
   const listings = [
-    { id: 1, title: 'Zoilos Luxury Heights', loc: 'Airport Residential, Accra', price: '$1.5M', img: '/realestate1.jpg' },
-    { id: 2, title: 'The Emerald Gardens', loc: 'East Legon, Ghana', price: '$2.2M', img: '/realestate2.jpg' },
-    { id: 3, title: 'Sapphire Waterfront', loc: 'Ada Foah, Coastal Region', price: '$3.8M', img: '/realestate3.jpg' },
-    { id: 4, title: 'Grand Regency Estate', loc: 'Kumasi Metropolitan', price: '$1.2M', img: '/realestate4.jpg' },
+    { id: 1, title: 'Magnificent 4-Bed House + BQ & Pool', loc: 'East Legon, Adjiringanor', price: '$650,000 (Negotiable)', img: null, video: '/vid3.mp4' },
+    { id: 2, title: 'Newly Built 4-Bed House + BQ', loc: 'Botwe School Junction', price: '$350,000', img: null, video: '/vid4.mp4' },
+    { id: 3, title: 'Ultra Modern 4 Bedroom House', loc: 'East Legon Hills', price: '$240,000 (Negotiable)', img: '/2nd.jpeg', video: null },
+    { id: 4, title: 'Modern Villa Residence', loc: 'East Legon Hills', price: '$150,000', img: null, video: '/vid.mp4' },
+    { id: 5, title: 'Executive Contemporary Home', loc: 'Nimai-Dzorn', price: '$220,000', img: null, video: '/vid2.mp4' },
   ]
 
   return (
@@ -35,7 +36,7 @@ export default function RealtyPage() {
           <div className={`${styles.statsGrid} reveal`}>
             {[
               { label: 'Properties Managed', val: '50+' },
-              { label: 'Portfolio Value', val: '$120M+' },
+              { label: 'Portfolio Value', val: 'GH₵1.8B+' },
               { label: 'Prime Locations', val: '7+' },
               { label: 'Client Retention', val: '98%' },
             ].map((s, i) => (
@@ -60,8 +61,21 @@ export default function RealtyPage() {
             {listings.map((l, i) => (
               <div key={l.id} className={`${styles.listingCard} reveal stagger-${i}`} style={{ padding: 0, overflow: 'hidden' }}>
                 <div style={{ height: '240px', width: '100%', position: 'relative' }}>
-                  <img src={l.img} alt={l.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                  <span style={{ position: 'absolute', top: '1.5rem', left: '1.5rem', background: 'white', padding: '0.4rem 0.8rem', fontSize: '0.75rem', fontWeight: 800, color: 'var(--realty-accent)', letterSpacing: '0.15em', borderRadius: 'var(--radius-sm)' }}>FEATURED LISTING</span>
+                  {l.video ? (
+                    <video
+                      src={l.video}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                  ) : (
+                    <img src={l.img!} alt={l.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  )}
+                  <span style={{ position: 'absolute', top: '1.5rem', left: '1.5rem', background: 'white', padding: '0.4rem 0.8rem', fontSize: '0.75rem', fontWeight: 800, color: 'var(--realty-accent)', letterSpacing: '0.15em', borderRadius: 'var(--radius-sm)' }}>
+                    {l.video ? 'VIDEO TOUR' : 'FEATURED LISTING'}
+                  </span>
                 </div>
                 <div style={{ padding: '2rem' }}>
                   <h3 style={{ fontSize: '1.4rem', marginBottom: '0.5rem' }}>{l.title}</h3>

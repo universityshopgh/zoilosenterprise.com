@@ -8,7 +8,7 @@ const galleryItems = [
   { id: 1,  category: 'Realty',     title: 'Luxury Estate, Accra',      color: '#D4A843', size: 'large',  img: '/realestate1.jpg' },
   { id: 2,  category: 'Global',     title: 'Tema Container Port',        color: '#FF8F00', size: 'tall',   img: '/import1.jpg' },
   { id: 3,  category: 'Foundation', title: 'Zoilos Foundation Impact',   color: '#FF6B35', size: 'normal', img: '/orphange1.jpg' },
-  { id: 4,  category: 'Realty',     title: 'Modern Villa, East Legon',   color: '#D4A843', size: 'tall',   img: '/realestate2.jpg' },
+  { id: 4,  category: 'Realty',     title: 'Modern 4-Bed House, East Legon Hills',   color: '#D4A843', size: 'tall',   img: '/2nd.jpeg' },
   { id: 5,  category: 'Global',     title: 'Accra Trade Market',         color: '#FF8F00', size: 'wide',   img: '/import2.jpg' },
   { id: 6,  category: 'Foundation', title: 'Community Outreach',         color: '#FF6B35', size: 'wide',   img: '/orphange2.jpg' },
   { id: 7,  category: 'Realty',     title: 'Commercial Plaza, Airport',  color: '#D4A843', size: 'normal', img: '/realestate3.jpg' },
@@ -17,6 +17,10 @@ const galleryItems = [
   { id: 10, category: 'Realty',     title: 'Premium Estate, Labone',     color: '#D4A843', size: 'wide',   img: '/realestate4.jpg' },
   { id: 11, category: 'Global',     title: 'Business Partnership',       color: '#FF8F00', size: 'normal', img: '/import4.jpg' },
   { id: 12, category: 'Foundation', title: 'Children\'s Welfare',        color: '#FF6B35', size: 'tall',   img: '/orphange4.jpg' },
+  { id: 13, category: 'Realty',     title: 'Residence, East Legon Hills - $150,000', color: '#D4A843', size: 'large', video: '/vid.mp4' },
+  { id: 14, category: 'Realty',     title: 'Executive Home, Nimai-Dzorn - $220,000', color: '#D4A843', size: 'tall', video: '/vid2.mp4' },
+  { id: 15, category: 'Realty',     title: 'Luxury 4-Bed + Pool, Adjiringanor - $650,000', color: '#D4A843', size: 'wide', video: '/vid3.mp4' },
+  { id: 16, category: 'Realty',     title: 'Modern 4-Bed + BQ, Botwe - $350,000', color: '#D4A843', size: 'large', video: '/vid4.mp4' },
 ]
 
 export default function GalleryClient() {
@@ -65,7 +69,18 @@ export default function GalleryClient() {
                   className={`${styles.card} ${styles['card_' + item.size]} reveal stagger-${i % 4}`}
                 >
                   <div style={{ position: 'relative', height: '100%', width: '100%' }}>
-                    <img src={item.img} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    {'video' in item && item.video ? (
+                      <video
+                        src={item.video as string}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      />
+                    ) : (
+                      <img src={item.img!} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    )}
                     <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(135deg, var(--zoilos-navy), ${item.color}44)`, opacity: 0.8 }}></div>
                     <span className={styles.bgTitle}>{item.title}</span>
                   </div>

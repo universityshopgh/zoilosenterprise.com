@@ -3,7 +3,7 @@
 }
 
 .hero {
-  background: linear-gradient(rgba(11, 26, 46, 0.80), rgba(11, 26, 46, 0.80)), url("/realestate1.jpg") center/cover no-repeat;
+  background: linear-gradient(rgba(11, 26, 46, 0.75), rgba(11, 26, 46, 0.75)), url("/realty-hero.jpeg") center/cover no-repeat;
   color: white;
   padding: 10rem 0 12rem;
   text-align: center;
